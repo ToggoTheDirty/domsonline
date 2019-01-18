@@ -2,20 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DOMS</title>
+
+    <script src="jquery/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="jquery/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery/jquery-ui-1.12.1.custom/jquery-ui.css"
+    <link rel="stylesheet" href="jquery/jquery-ui-1.12.1.custom/jquery-ui.theme.css">
+    <link rel="stylesheet" href="css/domsstyle.css">
+
+    <script>
+        var availableTags = "";
+        $( function() {
+                $.ajax({url: "/domsonline/php/ajax-search.php",
+                    success: function(result){
+                        availableTags = result;
+
+                        $( "#tags" ).autocomplete({
+                            source: availableTags.split(',')
+                        });
+                        // alert(availableTags);
+                    }});
+
+            $( ".controlgroup" ).controlgroup()
+        } );
+    </script>
+    <title>DOMS Online</title>
 </head>
 <body style="background-color: #0084c5">
 <div align="center"><img src="jpg/doms_logo2.jpg" style="height: 300px;width: 650px"> </div>
-<div align="center "><input type="text" style="width: 800px"></div>
-<div align="center">
-    <div style="position: relative; float: left; padding: 10px">
-        <img src="jpg/cards/domrichaosbringer.jpg">
+<div align="center" style="height: fit-content" >
+    <div style="height: 40px;"></div>
+    <div class="ui-widget">
+        <input type="button" class="ui-button ui-widget ui-corner-all" id="searchBtn" value="Search Card">
+        <input id="tags" style="width: 800px">
+        <span class="ui-icon ui-icon-lightbulb"> </span>
     </div>
-    <div style="position: relative; float: left; padding: 10px">
-        <img src="jpg/cards/rakdostheshowstopper.jpg ">
-    </div>
-</div>
 
+        <div class="row ui-widget" >
+
+            <div class="column" >
+                <img src="jpg/doms%20mtg%20cards/captiveaudience1.jpg" class="binder-rounded-corner">
+                <div style="background-color: whitesmoke; border-color: black">
+                    <fieldset>
+                        <legend>Details</legend>
+                        <div class="controlgroup">
+                            <div ><label>$10</label></div>
+                            <div ><label>P 200</label></div>
+                        </div>
+                    </fieldset>
+                </div>
+
+
+            </div>
+            <div class="column">
+                <img src="jpg/doms%20mtg%20cards/domrichaosbringer.jpg" class="binder-rounded-corner" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="jpg/doms%20mtg%20cards/rakdostheshowstopper.jpg"  class="binder-rounded-corner" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="jpg/doms%20mtg%20cards/ravagerwurm.jpg" class="binder-rounded-corner" style="width:100%">
+            </div>
+
+         </div>
+    <div class="row">
+
+        <div class="column">
+            <img src="jpg/doms%20mtg%20cards/captiveaudience1.jpg" class="binder-rounded-corner" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="jpg/doms%20mtg%20cards/domrichaosbringer.jpg" class="binder-rounded-corner" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="jpg/doms%20mtg%20cards/rakdostheshowstopper.jpg"  class="binder-rounded-corner" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="jpg/doms%20mtg%20cards/ravagerwurm.jpg" class="binder-rounded-corner" style="width:100%">
+        </div>
+
+    </div>
+    <div class="row">
+
+        <div class="column">
+            <img src="jpg/doms%20mtg%20cards/captiveaudience1.jpg" class="binder-rounded-corner" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="jpg/doms%20mtg%20cards/domrichaosbringer.jpg" class="binder-rounded-corner" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="jpg/doms%20mtg%20cards/rakdostheshowstopper.jpg"  class="binder-rounded-corner" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="jpg/doms%20mtg%20cards/ravagerwurm.jpg" class="binder-rounded-corner" style="width:100%">
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>
