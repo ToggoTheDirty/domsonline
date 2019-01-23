@@ -8,6 +8,7 @@
 .binder-rounded-corner
 {
     border-radius: 10px;
+    width: 100%;
 }
 
 .row {
@@ -17,4 +18,18 @@
 .column {
     flex: 25%;
     padding: 5px;
+}
+
+.domslogo{
+    height: 300px;
+    width: 100%;
+}
+.binder-background-details{
+    background-color: whitesmoke;
+    border-color: black;
+    border-radius: 10px;
+    width: 100%;
+}
+.binder-details{
+    align-content: center;
 }
